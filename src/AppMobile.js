@@ -19,6 +19,12 @@ const skills = [
   { name: 'Data Visualization', icon: <Layers size={28} className="text-orange-500" />, desc: 'Narratives, Dashboards' },
 ];
 
+const SectionBadge = ({ children }) => (
+  <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-5 bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
+    {children}
+  </span>
+);
+
 const ProjectCard = ({ project, navigateToPage, theme }) => {
   const d = theme === 'dark';
   return (
@@ -207,9 +213,9 @@ const AppMobile = () => {
       </section>
 
       {/* ABOUT */}
-      <section id="about" className={`py-12 px-4 ${d ? 'bg-[#0c0c16]' : 'bg-white'}`}>
+      <section id="about" className={`py-12 px-4 scroll-mt-12 ${d ? 'bg-[#0c0c16]' : 'bg-white'}`}>
         <div className="reveal">
-          <h2 className="text-xl font-bold text-center mb-6 grad-text">About Me</h2>
+          <div className="text-center mb-8"><SectionBadge>About Me</SectionBadge></div>
           <div className={`rounded-2xl p-5 border ${d ? 'bg-[#13131f] border-white/[0.06]' : 'bg-white border-gray-200'} shadow-lg`}>
             <div className="flex flex-col items-center gap-4 mb-5">
               <div className={`w-36 h-36 rounded-2xl overflow-hidden shadow-xl border-2 ${d ? 'border-indigo-500/40' : 'border-indigo-200'}`}>
@@ -246,9 +252,10 @@ const AppMobile = () => {
       <div className="section-line" />
 
       {/* EDUCATION & CERTS */}
-      <section id="education-certifications" className={`py-12 px-4 ${d ? 'bg-[#0a0a12]' : 'bg-gray-50'}`}>
+      <section id="education-certifications" className={`py-12 px-4 scroll-mt-12 ${d ? 'bg-[#0a0a12]' : 'bg-gray-50'}`}>
         <div className="reveal">
-          <h2 className="text-xl font-bold text-center mb-6 grad-text">Education & Certifications</h2>
+          <div className="text-center mb-8"><SectionBadge>Credentials</SectionBadge>
+          <h2 className="text-xl font-bold text-center mb-6 grad-text">Education & Certifications</h2></div>
           <h3 className="text-sm font-bold mb-4 flex items-center gap-1.5 grad-cool"><GraduationCap size={18} /> Education</h3>
           <div className="space-y-3 mb-6">
             {education.map((item, i) => (
@@ -277,9 +284,10 @@ const AppMobile = () => {
       <div className="section-line" />
 
       {/* PROJECTS */}
-      <section id="projects" className={`py-12 px-4 ${d ? 'bg-[#0c0c16]' : 'bg-white'}`}>
+      <section id="projects" className={`py-12 px-4 scroll-mt-12 ${d ? 'bg-[#0c0c16]' : 'bg-white'}`}>
         <div className="reveal">
-          <h2 className="text-xl font-bold text-center mb-6 grad-text">My Projects</h2>
+          <div className="text-center mb-8"><SectionBadge>Portfolio</SectionBadge>
+          <h2 className="text-xl font-bold text-center mb-6 grad-text">My Projects</h2></div>
           <div className="space-y-5">
             {displayed.map(p => <ProjectCard key={p.id} project={p} navigateToPage={navigateToPage} theme={theme} />)}
           </div>
@@ -296,9 +304,10 @@ const AppMobile = () => {
       <div className="section-line" />
 
       {/* SKILLS */}
-      <section id="skills" className={`py-12 px-4 ${d ? 'bg-[#0a0a12]' : 'bg-gray-50'}`}>
+      <section id="skills" className={`py-12 px-4 scroll-mt-12 ${d ? 'bg-[#0a0a12]' : 'bg-gray-50'}`}>
         <div className="reveal">
-          <h2 className="text-xl font-bold text-center mb-6 grad-text">My Skills</h2>
+          <div className="text-center mb-8"><SectionBadge>Toolbox</SectionBadge>
+          <h2 className="text-xl font-bold text-center mb-6 grad-text">My Skills</h2></div>
           <div className="grid grid-cols-3 gap-3">
             {skills.map((skill, i) => (
               <div key={i} className={`skill-card flex flex-col items-center p-3 rounded-xl border text-center ${d ? 'bg-[#13131f] border-white/[0.06]' : 'bg-white border-gray-200'}`}>
@@ -314,9 +323,10 @@ const AppMobile = () => {
       <div className="section-line" />
 
       {/* CONTACT */}
-      <section id="contact" className={`py-12 px-4 ${d ? 'bg-[#0c0c16]' : 'bg-white'}`}>
+      <section id="contact" className={`py-12 px-4 scroll-mt-12${d ? 'bg-[#0c0c16]' : 'bg-white'}`}>
         <div className="reveal">
-          <h2 className="text-xl font-bold text-center mb-6 grad-text">Get in Touch</h2>
+          <div className="text-center mb-8"><SectionBadge>Contact</SectionBadge>
+          <h2 className="text-xl font-bold text-center mb-6 grad-text">Get in Touch</h2></div>
           <div className={`rounded-2xl p-5 border ${d ? 'bg-[#13131f] border-white/[0.06]' : 'bg-white border-gray-200'} shadow-lg`}>
             <form onSubmit={handleContactSubmit} className="space-y-4">
               <div>
@@ -372,7 +382,7 @@ const AppMobile = () => {
         ${isScrolled ? `glass shadow-md ${d ? 'bg-[#0a0a12]/85 border-b border-white/[0.04]' : 'bg-white/85 border-b border-gray-100'}` : 'bg-transparent'}`}>
         <div className="flex justify-between items-center">
           <button onClick={() => navigateToPage('home')} className={`text-lg font-bold ${d ? 'text-white' : 'text-gray-900'}`}>
-            <span className="grad-text">Sid</span><span className={d ? 'text-gray-400' : 'text-gray-500'}>'s</span>
+            <span className="grad-text">Sid</span><span className={d ? 'text-gray-400' : 'text-gray-500'}>'s Portfolio</span>
           </button>
           <div className="flex items-center gap-2">
             <button onClick={toggleTheme} aria-label="Toggle theme"

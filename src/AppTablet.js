@@ -18,6 +18,11 @@ const skills = [
   { name: 'APIs', icon: <Code size={32} className="text-cyan-400" />, desc: 'REST APIs, JSON, Data Ingestion' },
   { name: 'Data Visualization', icon: <Layers size={32} className="text-orange-500" />, desc: 'Insight Narratives, Business Dashboards' },
 ];
+const SectionBadge = ({ children }) => (
+  <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-5 bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
+    {children}
+  </span>
+);
 
 const ProjectCard = ({ project, navigateToPage, theme }) => {
   const d = theme === 'dark';
@@ -173,9 +178,10 @@ const AppTablet = () => {
       </section>
 
       {/* ABOUT */}
-      <section id="about" className={`py-16 px-8 ${d ? 'bg-[#0c0c16]' : 'bg-white'}`}>
+      <section id="about" className={`py-16 px-8 scroll-mt-12 ${d ? 'bg-[#0c0c16]' : 'bg-white'}`}>
         <div className="reveal max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-8 grad-text">About Me</h2>
+          {/* <h2 className="text-2xl font-bold text-center mb-8 grad-text">About Me</h2> */}
+          <div className="text-center mb-10"><SectionBadge>About Me</SectionBadge></div>
           <div className={`rounded-2xl p-8 border shadow-xl ${d ? 'bg-[#13131f] border-white/[0.06]' : 'bg-white border-gray-200'}`}>
             <div className="grid grid-cols-3 gap-8 items-start">
               <div className="col-span-2">
@@ -214,9 +220,10 @@ const AppTablet = () => {
       <div className="section-line" />
 
       {/* EDUCATION & CERTS */}
-      <section id="education-certifications" className={`py-16 px-8 ${d ? 'bg-[#0a0a12]' : 'bg-gray-50'}`}>
+      <section id="education-certifications" className={`py-16 px-8 scroll-mt-12 ${d ? 'bg-[#0a0a12]' : 'bg-gray-50'}`}>
         <div className="reveal max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-8 grad-text">Education & Certifications</h2>
+          <div className="text-center mb-10"><SectionBadge>Credentials</SectionBadge>
+         <h2 className="text-2xl font-bold text-center mb-8 grad-text">Education & Certifications</h2></div>
           <div className="grid grid-cols-2 gap-8">
             <div>
               <h3 className="text-base font-bold mb-5 flex items-center gap-2 grad-cool"><GraduationCap size={20} /> Education</h3>
@@ -233,9 +240,10 @@ const AppTablet = () => {
       <div className="section-line" />
 
       {/* PROJECTS */}
-      <section id="projects" className={`py-16 px-8 ${d ? 'bg-[#0c0c16]' : 'bg-white'}`}>
+      <section id="projects" className={`py-16 px-8 scroll-mt-12 ${d ? 'bg-[#0c0c16]' : 'bg-white'}`}>
         <div className="reveal max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-8 grad-text">My Projects</h2>
+          <div className="text-center mb-10"><SectionBadge>Portfolio</SectionBadge>
+          <h2 className="text-2xl font-bold text-center mb-8 grad-text">My Projects</h2></div>
           <div className="grid grid-cols-2 gap-6">{displayed.map(p => <ProjectCard key={p.id} project={p} navigateToPage={navigateToPage} theme={theme} />)}</div>
           {totalPages > 1 && (
             <div className="flex justify-center items-center mt-8 gap-4">
@@ -250,9 +258,10 @@ const AppTablet = () => {
       <div className="section-line" />
 
       {/* SKILLS */}
-      <section id="skills" className={`py-16 px-8 ${d ? 'bg-[#0a0a12]' : 'bg-gray-50'}`}>
+      <section id="skills" className={`py-16 px-8 scroll-mt-12 ${d ? 'bg-[#0a0a12]' : 'bg-gray-50'}`}>
         <div className="reveal max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-8 grad-text">My Skills</h2>
+          <div className="text-center mb-10"><SectionBadge>Toolbox</SectionBadge>
+          <h2 className="text-2xl font-bold text-center mb-8 grad-text">My Skills</h2></div>
           <div className="grid grid-cols-4 gap-4">
             {skills.map((skill, i) => (
               <div key={i} className={`skill-card flex flex-col items-center p-4 rounded-xl border text-center group ${d ? 'bg-[#13131f] border-white/[0.06] hover:border-indigo-500/30' : 'bg-white border-gray-200 hover:border-indigo-400'}`}>
@@ -270,7 +279,8 @@ const AppTablet = () => {
       {/* CONTACT */}
       <section id="contact" className={`py-16 px-8 ${d ? 'bg-[#0c0c16]' : 'bg-white'}`}>
         <div className="reveal max-w-lg mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-8 grad-text">Get in Touch</h2>
+          <div className="text-center mb-10"><SectionBadge>Contact</SectionBadge>
+          <h2 className="text-2xl font-bold text-center mb-8 grad-text">Get in Touch</h2></div>
           <div className={`rounded-2xl p-6 border shadow-xl ${d ? 'bg-[#13131f] border-white/[0.06]' : 'bg-white border-gray-200'}`}>
             <form onSubmit={handleContactSubmit} className="space-y-4">
               <div><label className={`block text-xs font-semibold mb-1 ${d ? 'text-gray-300' : 'text-gray-700'}`}>Name</label><input type="text" value={contactName} onChange={e => setContactName(e.target.value)} placeholder="Your Name" required className={`w-full px-4 py-3 rounded-xl text-sm border focus:ring-2 focus:ring-indigo-500 outline-none ${d ? 'bg-white/5 border-white/10 text-white placeholder:text-gray-600' : 'bg-gray-50 border-gray-200 text-gray-900'}`} /></div>
