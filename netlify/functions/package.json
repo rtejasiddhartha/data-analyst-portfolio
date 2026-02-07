@@ -1,0 +1,16 @@
+    {
+      "name": "send-contact-email-function",
+      "version": "1.0.0",
+      "description": "Netlify function to send contact form emails",
+      "main": "send-contact-email.js",
+      "dependencies": {
+        "nodemailer": "^6.9.14",
+        "querystring": "^0.2.1"
+      },
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "keywords": [],
+      "author": "",
+      "license": "ISC"
+    }

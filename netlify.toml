@@ -1,0 +1,20 @@
+[build]
+  command = "npm run build"
+  publish = "build"
+
+[build.environment]
+  NODE_VERSION = "24"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# BEGIN MODIFIED REDIRECTS
+# Redirect all requests to index.html, but EXCLUDE files that exist (like static assets)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  # Ensure existing files (including CSS, JS bundles, images) are served directly.
+  # This is the key part of the fix.
+  force = false
