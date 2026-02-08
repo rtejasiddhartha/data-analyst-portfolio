@@ -298,7 +298,7 @@ const AppDesktop = () => {
           <div className="anim-hero">
             <span className={`inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-6 border
               ${d ? 'bg-indigo-500/10 text-indigo-300 border-indigo-500/20' : 'bg-indigo-50 text-indigo-600 border-indigo-100'}`}>
-              Data & BI Analyst
+              Data Analyst
             </span>
           </div>
           <h1 className="anim-hero-d1 mb-4">
@@ -334,7 +334,7 @@ const AppDesktop = () => {
               <div className="col-span-3">
                 <h3 className="text-3xl font-bold mb-3 grad-warm">Hi, I'm Teja Siddhartha</h3>
                 <p className={`text-lg font-medium mb-4 ${d ? 'text-indigo-300' : 'text-indigo-600'}`}>
-                  Data & BI Analyst | SQL • Python • Power BI | End-to-End Analytics
+                  Data Analyst | SQL • Python • Power BI | End-to-End Analytics
                 </p>
                 <p className={`text-base leading-relaxed mb-4 ${d ? 'text-gray-300' : 'text-gray-700'}`}>
                   I am a Data Analyst experienced in building end-to-end analytics solutions across finance, customer analytics, healthcare, retail, and digital asset markets. I transform raw data into structured datasets, well-defined KPIs, and interactive dashboards that support business and operational decisions.

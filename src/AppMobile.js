@@ -193,7 +193,7 @@ const AppMobile = () => {
         <div className="absolute top-1/3 left-1/4 w-[280px] h-[280px] rounded-full opacity-20 blur-[80px] pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(99,102,241,.4), transparent 70%)' }} />
         <div className="relative z-10 text-center max-w-full">
           <div className="anim-hero">
-            <span className={`inline-block px-3 py-1 rounded-full text-[10px] font-semibold tracking-widest uppercase mb-4 border ${d ? 'bg-indigo-500/10 text-indigo-300 border-indigo-500/20' : 'bg-indigo-50 text-indigo-600 border-indigo-100'}`}>Data & BI Analyst</span>
+            <span className={`inline-block px-3 py-1 rounded-full text-[10px] font-semibold tracking-widest uppercase mb-4 border ${d ? 'bg-indigo-500/10 text-indigo-300 border-indigo-500/20' : 'bg-indigo-50 text-indigo-600 border-indigo-100'}`}>Data Analyst</span>
           </div>
           <h1 className="anim-hero-d1 mb-3">
             <span className={`block text-lg font-medium mb-1 ${d ? 'text-gray-400' : 'text-gray-600'}`}>Hi, I'm Sid</span>
@@ -232,7 +232,7 @@ const AppMobile = () => {
               <button onClick={() => scrollToSection('education-certifications')} className={`px-4 py-2 rounded-full text-xs font-semibold flex items-center gap-1 border ${d ? 'bg-white/5 text-gray-200 border-white/10' : 'bg-gray-100 text-gray-700 border-gray-200'}`}><Award size={14} /> Certifications</button>
             </div>
             <h3 className="text-lg font-bold mb-2 grad-warm">Hi, I'm Teja Siddhartha</h3>
-            <p className={`text-xs font-medium mb-3 ${d ? 'text-indigo-300' : 'text-indigo-600'}`}>Data & BI Analyst | SQL • Python • Power BI | End-to-End Analytics</p>
+            <p className={`text-xs font-medium mb-3 ${d ? 'text-indigo-300' : 'text-indigo-600'}`}>Data Analyst | SQL • Python • Power BI | End-to-End Analytics</p>
             <p className={`text-xs leading-relaxed mb-3 ${d ? 'text-gray-300' : 'text-gray-700'}`}>I am a Data Analyst experienced in building end-to-end analytics solutions across finance, customer analytics, healthcare, retail, and digital asset markets. I transform raw data into structured datasets, well-defined KPIs, and interactive dashboards that support business and operational decisions.</p>
             <p className={`text-xs leading-relaxed mb-3 ${d ? 'text-gray-300' : 'text-gray-700'}`}>I work extensively with Python, SQL, Power BI, Excel, and BigQuery to design analytics pipelines — from ingestion and cleaning to modeling and visualization. My experience includes normalized OLTP schema design, OLAP modeling for multi-dimensional analysis, EDA, feature engineering, KPI architecture, and dashboard development.</p>
             <p className={`text-xs leading-relaxed mb-5 ${d ? 'text-gray-300' : 'text-gray-700'}`}>Across projects, I have analyzed crypto market trends, customer churn risk, wearable health data, and large-scale retail transactions, applying descriptive and predictive analytics to quantify risk and generate actionable insights. I focus on building analytics solutions that are technically robust, interpretable, and aligned with real business needs.</p>
